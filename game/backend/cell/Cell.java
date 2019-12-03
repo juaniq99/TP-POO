@@ -84,7 +84,9 @@ public class Cell {
 				Cell down = around[Direction.DOWN.ordinal()];
 				return down.fallUpperContent();
 			}
-		} 
+		} else {
+			grid.wasUpdated();
+		}
 		return false;
 	}
 	

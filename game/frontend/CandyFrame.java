@@ -23,6 +23,7 @@ public class CandyFrame extends VBox {
 	protected ImageManager images;
 	protected Point2D lastPoint;
 	protected CandyGame game;
+	protected GameListener listener;
 
 	public CandyFrame(CandyGame game, GameApp gameApp, Stage stage) {
 		this.game = game;
@@ -33,7 +34,6 @@ public class CandyFrame extends VBox {
 		scorePanel = new ScorePanel();
 		getChildren().add(scorePanel);
 		game.initGame();
-		GameListener listener;
 		game.addGameListener(listener = new GameListener() {
 			@Override
 			public void gridUpdated() {

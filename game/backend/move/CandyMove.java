@@ -10,11 +10,10 @@ public class CandyMove extends Move {
 	private Figure f2;
 	
 	private FigureDetector detector;
-	private Grid grid;
+
 	
 	public CandyMove(Grid grid) {
 		super(grid);
-		this.grid = grid;
 	}
 	
 	@Override
