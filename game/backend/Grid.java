@@ -151,11 +151,11 @@ public abstract class Grid {
 	}
 
 	public void setJails(){
-		for (int j = 0; j < SIZE-1; j++){
+		for (int j = 0; j <= SIZE-1; j++){
 			if (j != 4){
 				setContent(4, j, new JailedCandy(((Candy)get(4, j)).getColor()));
 			}
 		}
-	};
+	}
 
 }

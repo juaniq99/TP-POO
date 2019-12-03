@@ -17,4 +17,8 @@ public class Nothing extends Element {
 		return "NOTHING";
 	}
 
+	@Override
+	public boolean isExplosive() {
+		return false;
+	}
 }

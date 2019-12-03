@@ -1,28 +1,23 @@
 package game.backend.level;
 
-import game.backend.GameState;
 import game.backend.GameStateL2;
-import game.backend.Grid;
-import game.backend.cell.CandyGeneratorCell;
-import game.backend.cell.Cell;
-import game.backend.element.Wall;
+
 
 public class Level2 extends Level {
 
     private static int JAILED_CANDIES = 8;
-    private static int MAX_MOVES = 20;
+    private static int MAX_MOVES = 25;          // 5 movimientos más que en el nivel 1 porque este es más difícil
 
     @Override
-    protected GameState newState() {
+    protected GameStateL2 newState() {
         return new Level2State(JAILED_CANDIES, MAX_MOVES);
     }
 
     private class Level2State extends GameStateL2 {
-        private int jailedCandies;
         private long maxMoves;
 
-        public Level2State(int jailedCandies, int maxMoves) {
-            this.jailedCandies = jailedCandies;
+        public Level2State(int maxJailedCandies, int maxMoves) {
+            setJailedCandies(maxJailedCandies);
             this.maxMoves = maxMoves;
         }
 
@@ -31,7 +26,7 @@ public class Level2 extends Level {
         }
 
         public boolean playerWon() {
-            return jailedCandies == 0;
+            return getJailedCandies() <= 0;
         }
     }
 

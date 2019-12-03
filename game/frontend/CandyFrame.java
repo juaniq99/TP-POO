@@ -11,6 +11,7 @@ import javafx.geometry.Point2D;
 import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 import javafx.util.Duration;
 
 public class CandyFrame extends VBox {
@@ -23,9 +24,9 @@ public class CandyFrame extends VBox {
 	protected Point2D lastPoint;
 	protected CandyGame game;
 
-	public CandyFrame(CandyGame game) {
+	public CandyFrame(CandyGame game, GameApp gameApp, Stage stage) {
 		this.game = game;
-		getChildren().add(new AppMenu());
+		getChildren().add(new AppMenu(gameApp, stage));
 		images = new ImageManager();
 		boardPanel = new BoardPanel(game.getSize(), game.getSize(), CELL_SIZE);
 		getChildren().add(boardPanel);

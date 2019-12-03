@@ -2,6 +2,9 @@ package game.backend.element;
 
 public class JailedCandy extends Candy {
 
+    public JailedCandy() {
+    }
+
     public JailedCandy(CandyColor color){
         super(color);
     }
