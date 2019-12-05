@@ -20,6 +20,7 @@ public class CandyFrame extends VBox {
 
 	protected BoardPanel boardPanel;
 	protected ScorePanel scorePanel;
+	protected MovementsPanel movementsPanel;
 	protected ImageManager images;
 	protected Point2D lastPoint;
 	protected CandyGame game;
@@ -33,6 +34,8 @@ public class CandyFrame extends VBox {
 		getChildren().add(boardPanel);
 		scorePanel = new ScorePanel();
 		getChildren().add(scorePanel);
+		movementsPanel = new MovementsPanel();
+		getChildren().add(movementsPanel);
 		game.initGame();
 		game.addGameListener(listener = new GameListener() {
 			@Override
@@ -80,6 +83,7 @@ public class CandyFrame extends VBox {
 						}
 					}
 					scorePanel.updateScore(message);
+					movementsPanel.updateMovements(String.valueOf(game.getState().getMoves()));
 					lastPoint = null;
 				}
 			}

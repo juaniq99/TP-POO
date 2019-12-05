@@ -2,8 +2,10 @@ package game.frontend;
 
 import game.backend.CandyGames.CandyGame;
 import game.backend.CandyGames.CandyGameL2;
+import game.backend.CandyGames.CandyGameL3;
 import game.backend.level.Level1;
 import game.backend.level.Level2;
+import game.backend.level.Level3;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.layout.VBox;
@@ -44,11 +46,11 @@ public class GameApp extends Application {
 	}
 
 	public void runLevel3(Stage primaryStage) {
-		/*CandyGameL3 game = new CandyGameL3(Level3.class);
+		CandyGameL3 game = new CandyGameL3(Level3.class);
 		CandyFrameL3 frame = new CandyFrameL3(game, this, primaryStage);
 		Scene scene = new Scene(frame);
 		primaryStage.setResizable(false);
 		primaryStage.setScene(scene);
-		primaryStage.show();*/
+		primaryStage.show();
 	}
 }
