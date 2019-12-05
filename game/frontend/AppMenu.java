@@ -53,7 +53,7 @@ public class AppMenu extends MenuBar {
             alert.setHeaderText("Descripción de los distintos niveles disponibles");
             alert.setContentText("Nivel 1: Clásico (Conseguir 5000 puntos en 20 movimientos)\n" +
                             "Nivel 2: Jaulas (Liberar las 8 jaulas en 25 movimientos)\n" +
-                            "Nivel 3: ... ()\n");
+                            "Nivel 3: Frutas (Llevar 4 frutas abajo de todo en 25 movimientos)\n");
             alert.showAndWait();
         });
 

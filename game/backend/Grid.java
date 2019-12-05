@@ -1,18 +1,12 @@
 package game.backend;
 
 import game.backend.cell.Cell;
-import game.backend.element.Candy;
-import game.backend.element.CandyColor;
-import game.backend.element.Element;
-import game.backend.element.JailedCandy;
+import game.backend.element.*;
 import game.backend.move.Move;
 import game.backend.move.MoveMaker;
 
 import java.awt.Point;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public abstract class Grid {
 	
@@ -73,6 +67,7 @@ public abstract class Grid {
 			}	
 			i--;
 		}
+
 	}
 	
 	public void clearContent(int i, int j) {
@@ -156,6 +151,16 @@ public abstract class Grid {
 				setContent(4, j, new JailedCandy(((Candy)get(4, j)).getColor()));
 			}
 		}
+	}
+
+	public void setFruits() {
+		Random rn = new Random();
+		int i = rn.nextInt(9);
+		int j = rn.nextInt(9);
+		while(j == i)
+			j = rn.nextInt(9) ;
+		setContent(0,i,new Hazelnut());
+		setContent(0,j,new Cherry());
 	}
 
 }

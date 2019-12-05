@@ -3,13 +3,13 @@ package game.backend.CandyGames;
 import game.backend.EnhancedGameState;
 import game.backend.Grid;
 import game.backend.element.Element;
+import game.backend.element.Fruit;
 import game.backend.element.JailedCandy;
 
-public class CandyGameL2 extends CandyGame {
-
+public class CandyGameL3 extends CandyGame {
     private EnhancedGameState state;
 
-    public CandyGameL2(Class<?> clazz) {
+    public CandyGameL3(Class<?> clazz) {
         super(clazz);
     }
 
@@ -25,15 +25,14 @@ public class CandyGameL2 extends CandyGame {
         }
         this.state = (EnhancedGameState) grid.createState();
         grid.initialize();
-        grid.setJails();
-        addGameListener(this); // COMO NECESITABAMOS HACER setJails no pudimos acer super initGame
-
+        grid.setFruits();
+        addGameListener(this); // COMO NECESITABAMOS HACER setFruits no pudimos acer super initGame
     }
 
     @Override
     public void cellExplosion(Element e) {
         super.cellExplosion(e);
-        if (e instanceof JailedCandy)
+        if (e instanceof Fruit)
             state.decreaseObjectiveCandies();
     }
 }

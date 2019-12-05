@@ -15,7 +15,7 @@ public class CandyFrameL2 extends CandyFrame {
         getChildren().add(jailsPanel);
 
         addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
-            String message = "Remaining jails: " + ((CandyGameL2) game).getState().getJailedCandies();
+            String message = "Remaining jails: " + game.getState().getObjectiveCandies();
             jailsPanel.updateJails(message);
         });
     }

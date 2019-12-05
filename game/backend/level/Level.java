@@ -6,25 +6,28 @@ import game.backend.cell.Cell;
 import game.backend.element.Wall;
 
 public abstract class Level extends Grid {
-    private Cell wallCell;
-    private Cell candyGenCell;
+
+    private Cell wallCell = new Cell(this);
+    private Cell CandyGenCell = new CandyGeneratorCell(this);
+
+    public Cell getCandyGenCell() { //Hacemos esto para no tener que pisar todo el metodo fill cells
+        return CandyGenCell;
+    }
 
     @Override
     protected void fillCells() {
 
-        wallCell = new Cell(this);
         wallCell.setContent(new Wall());
-        candyGenCell = new CandyGeneratorCell(this);
 
         //corners
-        g()[0][0].setAround(candyGenCell, g()[1][0], wallCell, g()[0][1]);
-        g()[0][SIZE-1].setAround(candyGenCell, g()[1][SIZE-1], g()[0][SIZE-2], wallCell);
+        g()[0][0].setAround(getCandyGenCell(), g()[1][0], wallCell, g()[0][1]);
+        g()[0][SIZE-1].setAround(getCandyGenCell(), g()[1][SIZE-1], g()[0][SIZE-2], wallCell);
         g()[SIZE-1][0].setAround(g()[SIZE-2][0], wallCell, wallCell, g()[SIZE-1][1]);
         g()[SIZE-1][SIZE-1].setAround(g()[SIZE-2][SIZE-1], wallCell, g()[SIZE-1][SIZE-2], wallCell);
 
         //upper line cells
         for (int j = 1; j < SIZE-1; j++) {
-            g()[0][j].setAround(candyGenCell,g()[1][j],g()[0][j-1],g()[0][j+1]);
+            g()[0][j].setAround(getCandyGenCell(),g()[1][j],g()[0][j-1],g()[0][j+1]);
         }
         //bottom line cells
         for (int j = 1; j < SIZE-1; j++) {

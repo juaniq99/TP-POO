@@ -50,6 +50,17 @@ public class Cell {
 			this.content = new Nothing();
 		}
 	}
+
+	public void clear() {
+		Direction[] explosionCascade = content.explode();
+		grid.cellExplosion(content);
+		this.content = new Nothing();
+		if (explosionCascade != null) {
+			expandExplosion(explosionCascade);
+		}
+		this.content = new Nothing();
+
+	}
 	
 	private void expandExplosion(Direction[] explosion) {
 		for(Direction d: explosion) {

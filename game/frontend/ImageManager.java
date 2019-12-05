@@ -19,6 +19,8 @@ public class ImageManager {
 		images.put(new Nothing().getKey(), new Image(IMAGE_PATH + "nothing.png"));
 		images.put(new Bomb().getKey(),  new Image(IMAGE_PATH + "bomb.png"));
 		images.put(new Wall().getKey(),  new Image(IMAGE_PATH + "wall.png"));
+		images.put(new Cherry().getFullKey(), new Image(IMAGE_PATH + "cherry.png"));
+		images.put(new Hazelnut().getFullKey(), new Image(IMAGE_PATH + "hazelnut.png"));
 		for (CandyColor cc: CandyColor.values()) {
 			images.put(new Candy(cc).getFullKey(),   new Image(IMAGE_PATH + cc.toString().toLowerCase() + "Candy.png"));
 			images.put(new JailedCandy(cc).getFullKey(),   new Image(IMAGE_PATH + "jailed" + cc.toString().toLowerCase() + "Candy.png"));
