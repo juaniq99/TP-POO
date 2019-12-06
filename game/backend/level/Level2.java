@@ -16,8 +16,8 @@ public class Level2 extends Level {
     private class Level2State extends EnhancedGameState {
 
 
-        public Level2State(int maxFruitCandies, int maxMoves) {
-            super(maxFruitCandies, maxMoves);
+        public Level2State(int maxJailedCandies, int maxMoves) {
+            super(maxJailedCandies, maxMoves);
         }
 
         @Override
