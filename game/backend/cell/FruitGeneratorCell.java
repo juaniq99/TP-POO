@@ -16,7 +16,6 @@ public class FruitGeneratorCell extends CandyGeneratorCell {
 
     @Override
     public Element getContent() {
-        System.out.println(getFruitsToGen());
         if (getFruitsToGen() > 0) {
             Random random = new Random();
             int number = random.nextInt(100 * getFruitsToGen()); //Para que a medida que falten aparecer menos, las

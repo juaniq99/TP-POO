@@ -3,7 +3,6 @@ package game.backend;
 public abstract class EnhancedGameState extends GameState{
 
     protected int objectiveCandies;
-    protected long maxMoves;
 
     public void setObjectiveCandies(int objectiveCandies){
         this.objectiveCandies = objectiveCandies;

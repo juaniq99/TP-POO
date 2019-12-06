@@ -37,6 +37,7 @@ public class CandyFrame extends VBox {
 		movementsPanel = new MovementsPanel();
 		getChildren().add(movementsPanel);
 		game.initGame();
+		movementsPanel.updateMovements(String.valueOf(game.getState().getRemainingMoves()));
 		game.addGameListener(listener = new GameListener() {
 			@Override
 			public void gridUpdated() {
@@ -83,7 +84,7 @@ public class CandyFrame extends VBox {
 						}
 					}
 					scorePanel.updateScore(message);
-					movementsPanel.updateMovements(String.valueOf(game.getState().getMoves()));
+					movementsPanel.updateMovements(String.valueOf(game.getState().getRemainingMoves()));
 					lastPoint = null;
 				}
 			}

@@ -10,14 +10,14 @@ public class MovementsPanel extends BorderPane {
 
     public MovementsPanel() {
         setStyle("-fx-background-color: #5490ff");
-        movementsLabel = new Label("Movements used: 0");
+        movementsLabel = new Label("Movements left: -");
         movementsLabel.setAlignment(Pos.CENTER);
         movementsLabel.setStyle("-fx-font-size: 24");
         setCenter(movementsLabel);
     }
 
     public void updateMovements(String text) {
-        movementsLabel.setText("Movements used: " + text);
+        movementsLabel.setText("Movements left: " + text);
     }
 
 }
