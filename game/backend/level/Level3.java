@@ -37,11 +37,9 @@ public class Level3 extends Level {
     }
 
     private class Level3State extends EnhancedGameState {
-        private long maxMoves;
 
-        public Level3State(int maxFruitCandies, int maxMoves) { //FIJAR SI HACER EN ENHANCED O DEJARLO ACA
-            setObjectiveCandies(maxFruitCandies);
-            this.maxMoves = maxMoves;
+        public Level3State(int maxFruitCandies, int maxMoves) {
+            super(maxFruitCandies, maxMoves);
         }
 
         @Override

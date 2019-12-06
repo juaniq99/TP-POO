@@ -20,7 +20,7 @@ public class FruitGeneratorCell extends CandyGeneratorCell {
             return new Candy(CandyColor.values()[i]);
         }
         if(number == 1)
-            return new Hazelnut(); //Aca queriamos hacer generico pero no pudimos
+            return new Hazelnut();
         return new Cherry();
     }
 }
