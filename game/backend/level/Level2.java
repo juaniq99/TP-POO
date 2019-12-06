@@ -14,11 +14,9 @@ public class Level2 extends Level {
     }
 
     private class Level2State extends EnhancedGameState {
-        private long maxMoves;
 
         public Level2State(int maxJailedCandies, int maxMoves) {
-            setObjectiveCandies(maxJailedCandies);
-            this.maxMoves = maxMoves;
+            super(maxJailedCandies, maxMoves);
         }
 
         @Override

@@ -9,14 +9,15 @@ public class Level3 extends Level {
 
     private final static int FRUIT_CANDIES = 4;
     private final static int MAX_MOVES = 25;
+    private final static int INITIAL_FRUITS = 2;
 
-    private Cell fruitGeneratorCell = new FruitGeneratorCell(this);
+    private Cell fruitGeneratorCell = new FruitGeneratorCell(this, INITIAL_FRUITS);
 
     @Override
     public void fallElements() {
         super.fallElements();
         for (int i = 0; i < SIZE ; i++) {
-            if (g()[SIZE - 1][i].getContent().equals(new Fruit())) {
+            if (g()[SIZE - 1][i].getContent() instanceof Fruit) {
                 g()[SIZE - 1][i].clear();
                 fallElements();
             }
@@ -37,11 +38,9 @@ public class Level3 extends Level {
     }
 
     private class Level3State extends EnhancedGameState {
-        private long maxMoves;
 
         public Level3State(int maxFruitCandies, int maxMoves) { //FIJAR SI HACER EN ENHANCED O DEJARLO ACA
-            setObjectiveCandies(maxFruitCandies);
-            this.maxMoves = maxMoves;
+            super(maxFruitCandies, maxMoves);
         }
 
         @Override
