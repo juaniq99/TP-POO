@@ -4,8 +4,8 @@ public abstract class GameState {
 	
 	protected long score = 0;
 	protected int moves = 0;
-	protected long maxMoves = 20;
-	
+	protected int maxMoves = 20;
+
 	public void addScore(long value) {
 		this.score = this.score + value;
 	}
@@ -22,8 +22,8 @@ public abstract class GameState {
 		return moves;
 	}
 
-	public long getRemainingMoves() {
-		long resp = maxMoves - getMoves();
+	public int getRemainingMoves() {
+		int resp = maxMoves - getMoves();
 		return resp > 0? resp : 0;
 	}
 

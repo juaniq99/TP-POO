@@ -4,6 +4,7 @@ import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import java.util.Optional;
@@ -11,7 +12,6 @@ import java.util.Optional;
 public class AppMenu extends MenuBar {
 
     public AppMenu(GameApp gameApp, Stage stage) {
-
 
         Menu file = new Menu("Archivo");
         MenuItem exitMenuItem = new MenuItem("Salir");
@@ -36,7 +36,7 @@ public class AppMenu extends MenuBar {
             alert.setTitle("Acerca De");
             alert.setHeaderText("Candy TPE");
             alert.setContentText("Cátedra POO 2019.\n" +
-                    "Implementación Original: Laura Zabaleta (POO 2013).");
+                    "Implementacion: Juan Ignacio Quintairos, Gastón Donikian\n" + "Cualquier parecido con Candy Crush es pura coincidencia");
             alert.showAndWait();
         });
         help.getItems().add(aboutMenuItem);
@@ -55,11 +55,11 @@ public class AppMenu extends MenuBar {
         });
 
         MenuItem level1MenuItem = new MenuItem("Nivel 1");
-        level1MenuItem.setOnAction(event -> levelType.LEVEL1.leveler(gameApp,stage));
+        level1MenuItem.setOnAction(event -> LevelType.LEVEL1.leveler(gameApp,stage));
         MenuItem level2MenuItem = new MenuItem("Nivel 2");
-        level2MenuItem.setOnAction(event -> levelType.LEVEL2.leveler(gameApp,stage));
+        level2MenuItem.setOnAction(event -> LevelType.LEVEL2.leveler(gameApp,stage));
         MenuItem level3MenuItem = new MenuItem("Nivel 3");
-        level3MenuItem.setOnAction(event -> levelType.LEVEL3.leveler(gameApp,stage));
+        level3MenuItem.setOnAction(event -> LevelType.LEVEL3.leveler(gameApp,stage));
         levels.getItems().addAll(infoMenuItem, level1MenuItem, level2MenuItem, level3MenuItem);
         getMenus().addAll(file, help, levels);
 

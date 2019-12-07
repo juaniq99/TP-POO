@@ -39,6 +39,10 @@ public class ImageManager {
 		}
 	}
 
+	public static String getImagePath() {
+		return IMAGE_PATH;
+	}
+
 	public Image getImage(Element e) {
 		return images.get(e.getFullKey());
 	}

@@ -30,9 +30,9 @@ public class LevelSelect extends VBox {
         level3.setPrefSize(level1.getPrefWidth(),level1.getPrefHeight());
 
 
-        level1.setOnAction(event -> levelType.LEVEL1.leveler(gameApp,stage));
-        level2.setOnAction(event -> levelType.LEVEL2.leveler(gameApp,stage));
-        level3.setOnAction(event -> levelType.LEVEL3.leveler(gameApp,stage));
+        level1.setOnAction(event -> LevelType.LEVEL1.leveler(gameApp,stage));
+        level2.setOnAction(event -> LevelType.LEVEL2.leveler(gameApp,stage));
+        level3.setOnAction(event -> LevelType.LEVEL3.leveler(gameApp,stage));
 
         levelHolder.getChildren().addAll(level1,level2,level3);
         this.getChildren().add(levelHolder);

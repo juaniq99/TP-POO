@@ -22,11 +22,13 @@ public class GameApp extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 		VBox vbox = new VBox();
-		primaryStage.getIcons().add(new Image("images/" + "icon.png"));
+
 		vbox.getChildren().add(new AppMenu(this, primaryStage));
 		vbox.getChildren().add(new LevelSelect(this,primaryStage));
 		Scene scene = new Scene(vbox);
 		primaryStage.setResizable(false);
+		primaryStage.setTitle("Crandy Bash");
+		primaryStage.getIcons().add(new Image(ImageManager.getImagePath() + "icon.png"));
 		primaryStage.setScene(scene);
 		primaryStage.show();
 	}
