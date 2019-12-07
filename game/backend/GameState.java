@@ -13,19 +13,20 @@ public abstract class GameState {
 	public long getScore(){
 		return score;
 	}
-
-	public long getRemainingMoves() {
-		return maxMoves - moves;
-	}
 	
 	public void addMove() {
 		moves++;
 	}
-	
+
 	public int getMoves() {
 		return moves;
 	}
-	
+
+	public long getRemainingMoves() {
+		long resp = maxMoves - getMoves();
+		return resp > 0? resp : 0;
+	}
+
 	public abstract boolean gameOver();
 	
 	public abstract boolean playerWon();

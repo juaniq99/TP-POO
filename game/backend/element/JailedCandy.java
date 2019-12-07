@@ -27,4 +27,8 @@ public class JailedCandy extends Candy {
     public long getScore() {
         return 100;
     }
+
+    @Override
+    public boolean affectedBySpecials() { return false; }
+
 }

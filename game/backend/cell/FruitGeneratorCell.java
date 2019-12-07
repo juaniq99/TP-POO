@@ -7,20 +7,36 @@ import java.util.Random;
 
 public class FruitGeneratorCell extends CandyGeneratorCell {
 
-    public FruitGeneratorCell(Grid grid) {
+    private int fruitsToGen;
+
+    public FruitGeneratorCell(Grid grid, int maxFruitsToGen) {
         super(grid);
+        this.fruitsToGen = maxFruitsToGen;
     }
 
     @Override
     public Element getContent() {
-        Random random = new Random();
-        int number = random.nextInt(200);
-        if(number > 1 ) {
-            int i = (int) (Math.random() * CandyColor.values().length);
-            return new Candy(CandyColor.values()[i]);
+        if (getFruitsToGen() > 0) {
+            Random random = new Random();
+            int number = random.nextInt(100 * getFruitsToGen()); //Para que a medida que falten aparecer menos, las
+            if (number == 0) {                                           // posibilidades de que aparezca una fruta sean mayores
+                decreaseFruitsToGen();
+                return new Cherry();
+            }
+            if (number == 1) {
+                decreaseFruitsToGen();
+                return new Hazelnut();
+            }
         }
-        if(number == 1)
-            return new Hazelnut();
-        return new Cherry();
+        int i = (int) (Math.random() * CandyColor.values().length);
+        return new Candy(CandyColor.values()[i]);
+    }
+
+    public int getFruitsToGen() {
+        return fruitsToGen;
+    }
+
+    public void decreaseFruitsToGen(){
+        fruitsToGen -= 1;
     }
 }

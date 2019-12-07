@@ -21,4 +21,8 @@ public class Nothing extends Element {
 	public boolean isExplosive() {
 		return false;
 	}
+
+	@Override
+	public boolean affectedBySpecials() { return false; }
+
 }

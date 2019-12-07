@@ -28,6 +28,7 @@ public class CandyFrame extends VBox {
 
 	public CandyFrame(CandyGame game, GameApp gameApp, Stage stage) {
 		this.game = game;
+
 		getChildren().add(new AppMenu(gameApp, stage));
 		images = new ImageManager();
 		boardPanel = new BoardPanel(game.getSize(), game.getSize(), CELL_SIZE);

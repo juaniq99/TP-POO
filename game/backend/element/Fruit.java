@@ -9,9 +9,7 @@ public class Fruit extends Element { //CAMBIAR A ENUM
 
     @Override
     public boolean equals(Object obj) {
-        if(obj == this)
-            return true;
-        return obj instanceof Fruit;
+        return false;    //Para que no intente hacer combinaciones de 3 frutas iguales en combo en tryRemove
     }
 
     @Override
@@ -23,4 +21,7 @@ public class Fruit extends Element { //CAMBIAR A ENUM
     public String getKey() {
         return "FRUIT";
     }
+
+    @Override
+    public boolean affectedBySpecials() { return false; }
 }

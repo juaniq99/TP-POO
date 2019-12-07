@@ -69,7 +69,8 @@ public class Cell {
 	}
 	
 	private void explode(Direction d) {
-		clearContent();
+		if (this.getContent().affectedBySpecials())
+			clearContent();
 		if (this.around[d.ordinal()] != null)
 			this.around[d.ordinal()].explode(d);
 	}

@@ -26,7 +26,7 @@ public class CandyGameL3 extends CandyGame {
         this.state = (EnhancedGameState) grid.createState();
         grid.initialize();
         grid.setFruits();
-        addGameListener(this); // COMO NECESITABAMOS HACER setFruits no pudimos acer super initGame
+        addGameListener(this); // como necesitamos llamar a setFruits no podemos hacer super initGame
     }
 
     @Override

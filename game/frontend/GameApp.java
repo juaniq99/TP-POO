@@ -8,6 +8,8 @@ import game.backend.level.Level2;
 import game.backend.level.Level3;
 import javafx.application.Application;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.image.Image;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
@@ -19,8 +21,10 @@ public class GameApp extends Application {
 
 	@Override
 	public void start(Stage primaryStage) {
-		VBox vbox = new VBox(8);
+		VBox vbox = new VBox();
+		primaryStage.getIcons().add(new Image("images/" + "icon.png"));
 		vbox.getChildren().add(new AppMenu(this, primaryStage));
+		vbox.getChildren().add(new LevelSelect(this,primaryStage));
 		Scene scene = new Scene(vbox);
 		primaryStage.setResizable(false);
 		primaryStage.setScene(scene);
