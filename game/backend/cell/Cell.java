@@ -40,7 +40,7 @@ public class Cell {
 	}
 	
 	public void clearContent() {
-		if (content.isExplosive()) {
+		if (content.isRemovable()) {
 			Direction[] explosionCascade = content.explode();
 			grid.cellExplosion(content);
 			this.content = new Nothing();

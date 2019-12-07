@@ -1,6 +1,5 @@
 package game.frontend;
 
-import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
@@ -8,13 +7,8 @@ import javafx.stage.Stage;
 import java.util.Optional;
 
 public class AppMenu extends MenuBar {
-    private GameApp gameApp;
-    private Stage stage;
 
     public AppMenu(GameApp gameApp, Stage stage) {
-
-        this.stage = stage;
-        this.gameApp = gameApp;
 
         Menu file = new Menu("Archivo");
         MenuItem exitMenuItem = new MenuItem("Salir");

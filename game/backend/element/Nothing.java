@@ -18,7 +18,7 @@ public class Nothing extends Element {
 	}
 
 	@Override
-	public boolean isExplosive() {
+	public boolean isRemovable() {
 		return false;
 	}
 

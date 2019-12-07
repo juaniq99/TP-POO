@@ -159,9 +159,9 @@ public abstract class Grid {
 		int j = rn.nextInt(9);
 		while (get(0, i) instanceof Fruit)
 			i = rn.nextInt(9);
+		setContent(0,i,new Hazelnut());
 		while(get(0, j) instanceof Fruit)
 			j = rn.nextInt(9) ;
-		setContent(0,i,new Hazelnut());
 		setContent(0,j,new Cherry());
 	}
 

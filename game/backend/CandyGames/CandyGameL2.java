@@ -26,7 +26,7 @@ public class CandyGameL2 extends CandyGame {
         this.state = (EnhancedGameState) grid.createState();
         grid.initialize();
         grid.setJails();
-        addGameListener(this); // COMO NECESITABAMOS HACER setJails no pudimos acer super initGame
+        addGameListener(this); // como necesitamos llamar a setJails y state debe ser enhanced no pudimos hacer super initGame
 
     }
 

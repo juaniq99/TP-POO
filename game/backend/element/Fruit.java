@@ -9,11 +9,11 @@ public class Fruit extends Element { //CAMBIAR A ENUM
 
     @Override
     public boolean equals(Object obj) {
-        return false;    //Para que no intente hacer combinaciones de 3 frutas iguales en combo en tryRemove
+        return false;    //Para que no intente hacer combinaciones de 3 o más frutas iguales en combo en tryRemove
     }
 
     @Override
-    public boolean isExplosive() {
+    public boolean isRemovable() {
         return false;
     }
 

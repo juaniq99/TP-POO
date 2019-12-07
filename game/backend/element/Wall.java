@@ -13,7 +13,7 @@ public class Wall extends Element {
 	}
 
 	@Override
-	public boolean isExplosive() {
+	public boolean isRemovable() {
 		return false;
 	}
 
