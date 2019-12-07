@@ -43,4 +43,5 @@ public class ImageManager {
 		return images.get(e.getFullKey());
 	}
 
+	public static String getImagePath() { return IMAGE_PATH; }
 }

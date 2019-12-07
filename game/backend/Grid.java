@@ -145,24 +145,4 @@ public abstract class Grid {
 		}
 	}
 
-	public void setJails(){
-		for (int j = 0; j <= SIZE-1; j++){
-			if (j != 4){
-				setContent(4, j, new JailedCandy(((Candy)get(4, j)).getColor()));
-			}
-		}
-	}
-
-	public void setFruits() {
-		Random rn = new Random();
-		int i = rn.nextInt(9);
-		int j = rn.nextInt(9);
-		while (get(0, i) instanceof Fruit)
-			i = rn.nextInt(9);
-		setContent(0,i,new Hazelnut());
-		while(get(0, j) instanceof Fruit)
-			j = rn.nextInt(9) ;
-		setContent(0,j,new Cherry());
-	}
-
 }

@@ -33,7 +33,7 @@ public class AppMenu extends MenuBar {
             alert.setTitle("Acerca De");
             alert.setHeaderText("Candy TPE");
             alert.setContentText("Cátedra POO 2019.\n" +
-                    "Implementación Original: Laura Zabaleta (POO 2013).");
+                    "Implementacion: Juan Ignacio Quintairos, Gastón Donikian\n" + "Cualquier parecido con Candy Crush es pura coincidencia");
             alert.showAndWait();
         });
         help.getItems().add(aboutMenuItem);
@@ -46,53 +46,20 @@ public class AppMenu extends MenuBar {
             alert.setTitle("Niveles");
             alert.setHeaderText("Descripción de los distintos niveles disponibles");
             alert.setContentText("Nivel 1: Clásico (Conseguir 5000 puntos en 20 movimientos)\n" +
-                            "Nivel 2: Jaulas (Liberar las 8 jaulas en 25 movimientos)\n" +
-                            "Nivel 3: Frutas (Llevar 4 frutas abajo de todo en 25 movimientos)\n");
+                    "Nivel 2: Jaulas (Liberar las 8 jaulas en 25 movimientos)\n" +
+                    "Nivel 3: Frutas (Llevar 4 frutas abajo de todo en 25 movimientos)\n");
             alert.showAndWait();
         });
 
         MenuItem level1MenuItem = new MenuItem("Nivel 1");
-        level1MenuItem.setOnAction(event -> {
-            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-            alert.setTitle("Cambiar Nivel");
-            alert.setHeaderText("Cambiar el nivel actual al nivel 1");
-            alert.setContentText("Se perderá el progreso en el nivel actual, si está jugando uno");
-            Optional<ButtonType> result = alert.showAndWait();
-            if(result.isPresent()) {
-                if (result.get() == ButtonType.OK) {
-                    gameApp.runLevel1(stage);
-                }
-            }
-        });
+        level1MenuItem.setOnAction(event -> LevelType.LEVEL1.leveler(gameApp,stage));
         MenuItem level2MenuItem = new MenuItem("Nivel 2");
-        level2MenuItem.setOnAction(event -> {
-            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-            alert.setTitle("Cambiar Nivel");
-            alert.setHeaderText("Cambiar el nivel actual al nivel 2");
-            alert.setContentText("Se perderá el progreso en el nivel actual, si está jugando uno");
-            Optional<ButtonType> result = alert.showAndWait();
-            if(result.isPresent()) {
-                if (result.get() == ButtonType.OK) {
-                    gameApp.runLevel2(stage);
-                }
-            }
-        });
+        level2MenuItem.setOnAction(event -> LevelType.LEVEL2.leveler(gameApp,stage));
         MenuItem level3MenuItem = new MenuItem("Nivel 3");
-        level3MenuItem.setOnAction(event -> {
-            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-            alert.setTitle("Cambiar Nivel");
-            alert.setHeaderText("Cambiar el nivel actual al nivel 3");
-            alert.setContentText("Se perderá el progreso en el nivel actual, si está jugando uno");
-            Optional<ButtonType> result = alert.showAndWait();
-            if(result.isPresent()) {
-                if (result.get() == ButtonType.OK) {
-                    gameApp.runLevel3(stage);
-                }
-            }
-        });
+        level3MenuItem.setOnAction(event -> LevelType.LEVEL3.leveler(gameApp,stage));
         levels.getItems().addAll(infoMenuItem, level1MenuItem, level2MenuItem, level3MenuItem);
-
         getMenus().addAll(file, help, levels);
+
     }
 
 }

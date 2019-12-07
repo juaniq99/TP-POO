@@ -3,7 +3,11 @@ package game.backend.level;
 import game.backend.EnhancedGameState;
 import game.backend.cell.Cell;
 import game.backend.cell.FruitGeneratorCell;
+import game.backend.element.Cherry;
 import game.backend.element.Fruit;
+import game.backend.element.Hazelnut;
+
+import java.util.Random;
 
 public class Level3 extends Level {
 
@@ -17,7 +21,7 @@ public class Level3 extends Level {
     public void fallElements() {
         super.fallElements();
         for (int i = 0; i < SIZE ; i++) {
-            if (g()[SIZE - 1][i].getContent() instanceof Fruit) {
+            if (g()[SIZE - 1][i].getContent() instanceof Fruit) {   //Para que llame otra vez si se borró una fruta de la última fila
                 g()[SIZE - 1][i].clear();
                 fallElements();
             }
@@ -25,7 +29,17 @@ public class Level3 extends Level {
         }
     }
 
-
+    public void setFruits() {
+        Random rn = new Random();
+        int i = rn.nextInt(9);
+        int j = rn.nextInt(9);
+        while (get(0, i) instanceof Fruit)
+            i = rn.nextInt(9);
+        setContent(0,i,new Hazelnut());
+        while(get(0, j) instanceof Fruit)
+            j = rn.nextInt(9) ;
+        setContent(0,j,new Cherry());
+    }
 
     @Override
     public Cell getCandyGenCell(){ //Hacemos esto para no tener que pisar todo el metodo fill cells

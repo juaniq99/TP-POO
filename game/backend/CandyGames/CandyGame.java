@@ -17,6 +17,8 @@ public class CandyGame implements GameListener {
 	}
 
 	public GameState getState() {return state; }
+
+	public Grid getGrid() {return grid; }
 	
 	public void initGame() {
 		try {
@@ -24,8 +26,8 @@ public class CandyGame implements GameListener {
 		} catch(IllegalAccessException | InstantiationException e) {
 			System.out.println("ERROR AL INICIAR");
 		}
-		this.state = grid.createState();
-		grid.initialize();
+		this.state = getGrid().createState();
+		getGrid().initialize();
 		addGameListener(this);
 	}
 	
@@ -34,15 +36,15 @@ public class CandyGame implements GameListener {
 	}
 	
 	public boolean tryMove(int i1, int j1, int i2, int j2){
-		return grid.tryMove(i1, j1, i2, j2);
+		return getGrid().tryMove(i1, j1, i2, j2);
 	}
 	
 	public Cell get(int i, int j){
-		return grid.getCell(i, j);
+		return getGrid().getCell(i, j);
 	}
 	
 	public void addGameListener(GameListener listener) {
-		grid.addListener(listener);
+		getGrid().addListener(listener);
 	}
 	
 	public long getScore() {

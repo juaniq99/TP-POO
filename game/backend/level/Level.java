@@ -10,7 +10,7 @@ public abstract class Level extends Grid {
     private Cell wallCell = new Cell(this);
     private Cell CandyGenCell = new CandyGeneratorCell(this);
 
-    public Cell getCandyGenCell() { //Hacemos esto para no tener que pisar todo el metodo fill cells
+    public Cell getCandyGenCell() {
         return CandyGenCell;
     }
 

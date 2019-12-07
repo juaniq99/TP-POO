@@ -1,13 +1,13 @@
 package game.backend.CandyGames;
 
 import game.backend.EnhancedGameState;
-import game.backend.Grid;
 import game.backend.element.Element;
 import game.backend.element.Fruit;
-import game.backend.element.JailedCandy;
+import game.backend.level.Level3;
 
 public class CandyGameL3 extends CandyGame {
     private EnhancedGameState state;
+    private Level3 grid;
 
     public CandyGameL3(Class<?> clazz) {
         super(clazz);
@@ -17,15 +17,18 @@ public class CandyGameL3 extends CandyGame {
     public EnhancedGameState getState() {return state; }
 
     @Override
+    public Level3 getGrid() {return grid; }
+
+    @Override
     public void initGame() {
         try {
-            grid = (Grid)levelClass.newInstance();
+            grid = (Level3) levelClass.newInstance();
         } catch(IllegalAccessException | InstantiationException e) {
             System.out.println("ERROR AL INICIAR");
         }
-        this.state = (EnhancedGameState) grid.createState();
-        grid.initialize();
-        grid.setFruits();
+        this.state = (EnhancedGameState) getGrid().createState();
+        getGrid().initialize();
+        getGrid().setFruits();
         addGameListener(this); // como necesitamos llamar a setFruits no podemos hacer super initGame
     }
 
@@ -33,6 +36,6 @@ public class CandyGameL3 extends CandyGame {
     public void cellExplosion(Element e) {
         super.cellExplosion(e);
         if (e instanceof Fruit)
-            state.decreaseObjectiveCandies();
+            getState().decreaseObjectiveCandies();
     }
 }

@@ -1,6 +1,8 @@
 package game.backend.level;
 
 import game.backend.EnhancedGameState;
+import game.backend.element.Candy;
+import game.backend.element.JailedCandy;
 
 
 public class Level2 extends Level {
@@ -11,6 +13,14 @@ public class Level2 extends Level {
     @Override
     protected EnhancedGameState newState() {
         return new Level2State(JAILED_CANDIES, MAX_MOVES);
+    }
+
+    public void setJails(){
+        for (int j = 0; j <= SIZE-1; j++){
+            if (j != 4){
+                setContent(4, j, new JailedCandy(((Candy)get(4, j)).getColor()));
+            }
+        }
     }
 
     private class Level2State extends EnhancedGameState {
