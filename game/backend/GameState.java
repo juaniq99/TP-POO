@@ -23,7 +23,8 @@ public abstract class GameState {
 	}
 
 	public long getRemainingMoves() {
-		return maxMoves - getMoves();
+		long resp = maxMoves - getMoves();
+		return resp > 0? resp : 0;
 	}
 
 	public abstract boolean gameOver();

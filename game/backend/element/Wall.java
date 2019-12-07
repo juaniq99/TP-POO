@@ -16,4 +16,8 @@ public class Wall extends Element {
 	public boolean isExplosive() {
 		return false;
 	}
+
+	@Override
+	public boolean affectedBySpecials() { return false; }
+
 }

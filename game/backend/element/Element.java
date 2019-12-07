@@ -26,4 +26,5 @@ public abstract class Element {
 
 	public boolean isExplosive() {return true; }
 
+	public boolean affectedBySpecials() { return true; }
 }

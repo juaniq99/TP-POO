@@ -21,4 +21,7 @@ public class Fruit extends Element { //CAMBIAR A ENUM
     public String getKey() {
         return "FRUIT";
     }
+
+    @Override
+    public boolean affectedBySpecials() { return false; }
 }
